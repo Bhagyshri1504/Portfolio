@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hire Me</title>
+    <link rel="stylesheet" href="hireme.css">
+</head>
+<body>
+    <!-----------By using Sheets------------->
+    
+   <section class="contact" id="contact">
+  <h1 class="heading">hire <span>me</span></h1>
+  <div class="col-container">
+    <div class="col">
+      <h2 class="heading">Leave message</h2>
+
+      <form action="" name="submit-to-google-sheet">
+        <input type="text" name="Name" id="Name" placeholder="company name" required=""/>
+        <input type="email" name="email" id="email" placeholder="company email" required=""/>
+        <input type="text" name="subject" id="subject" placeholder="subject" required="" />
+        <textarea name="message" id="message" placeholder="write a message" id="" cols="30" rows="10" required=""></textarea>
+        <button type="submit"class="btn">send message</button>
+      </form>
+      <span id="msg"></span>
+    </div>
+
+
+  
+  </div>
+</section>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <script src="https://smtpjs.com/v3/smtp.js">
+    </script>
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyvBCcVIbfiote1fvgPShyNxo6hj-OGtgd08aKPObI8M3SEKAPHBPIULYRRXkLdV-WK/exec'
+
+      const form = document.forms['submit-to-google-sheet']
+      const msg=document.getElementById("msg")
+    
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response =>{
+            msg.innerHTML="Message sent successfully."
+            setTimeout(function(){
+              msg.innerHTML=" "
+            },5000)
+            form.reset();
+          })
+          .catch(error => console.error('Error!', error.message))
+      })
+    </script>
+ 
+ 
+
+ 
+ <!---------By using Mail------------>
+<!--
+ 
+ <section class="contact" id="contact">
+  <h1 class="heading">hire <span>me</span></h1>
+  <div class="col-container">
+    <div class="col">
+      <h2 class="heading">get Connected</h2>
+
+      <form onsubmit="sendEmail(); reset(); return false;">
+        <input type="text" name="Name" id="Name" placeholder="Enter your name" required=""/>
+        <input type="text" name="Name" id="CName" placeholder="company name" required=""/>
+        <input type="email" name="email" id="email" placeholder="company email" required=""/>
+        <input type="text" name="subject" id="subject" placeholder="subject" required="" />
+        <textarea name="message" id="message" placeholder="write a message" id="" cols="30" rows="10" required=""></textarea>
+        <button type="submit"class="btn">send message</button>
+      </form>
+      <span id="msg"></span>
+    </div>
+  </div>
+</section>
+
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+
+<script>
+  function sendEmail()
+  {
+      Email.send({
+        Host : "smtp.elasticemail.com",
+        Username : "bpatil1542001@gmail.com",
+        Password : "",
+        To : 'bhagyashri2001kkw@gmail.com',
+        From : document.getElementById("email").value,
+        Subject :"Hire Me form",
+        Body : " Name: "+document.getElementById("Name").value
+        +"<br>Company Name: "+document.getElementById("CName").value
+        +"<br>Email: "+document.getElementById("email").value
+        +"<br>Subject: "+document.getElementById("subject").value
+        +"<br>Message: "+document.getElementById("message").value
+    }).then(
+      message => alert("Message send successfully.")
+    );
+}
+</script>
+
+</body>
+</html>
+
+-->
+
+
+<!--Subject:"Hire Me form from"+document.getElementById("name").value,
+        Body : "Name: "+document.getElementById("Name").value
+        +"<br>Email: "+document.getElementById("email").value
+        +"<br>Subject: "+document.getElementById("subject").value
+        +"<br>Message: "+document.getElementById("message").value
+    }).then(-->

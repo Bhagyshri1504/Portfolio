@@ -1,0 +1,112 @@
+* {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: 0.2s linear;
+  }
+  
+ /* css variables */
+:root {
+    --white: #fff;
+    --dark-gray: #ababab;
+    --light-gray: #808080;
+    --dark-bg: #222222;
+    --light-bg: #333333;
+    --yellow: #bac964;
+    --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  }
+
+ html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+  }
+  html::-webkit-scrollbar {
+    width: 1rem;
+  }
+  html::-webkit-scrollbar-track {
+    background: var(--white);
+  }
+  html::-webkit-scrollbar-thumb {
+    background: var(--light-bg);
+  }
+
+  body {
+    background-color: var(--dark-bg);
+  }
+
+  section {
+    padding: 5rem 9%;
+  }
+  .heading {
+    color: var(--white);
+    font-size: 3rem;
+    font-weight: 200;
+    text-align: center;
+    padding-bottom: 4rem;
+  }
+  .heading span {
+    font-weight: 700;
+  }
+
+  .btn {
+    background-color: var(--yellow);
+    font-size: 1.7rem;
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    color: var(--white);
+    text-transform: uppercase;
+    margin-right: 1rem;
+    display: inline-block;
+    margin-top: 1rem;
+    cursor: pointer;
+  }
+  /* contact */
+.contact .col-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 6rem;
+  }
+  
+  .contact .col-container .col h2 {
+    font-size: 2.5rem;
+    color: var(--white);
+    font-weight: 200;
+    padding-bottom: 5rem;
+  }
+  
+  .contact .col-container .col input,
+  .contact .col-container .col textarea {
+    background-color: var(--light-bg);
+    width: 100%;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    font-size: 1.7rem;
+    color: var(--dark-gray);
+    margin: 0.5rem 0;
+    resize: vertical;
+  }
+  
+  .contact .col-container .col p {
+    font-size: 1.7rem;
+    color: var(--yellow);
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+  }
+  
+  .contact .col-container .col span {
+    font-size: 1.5rem;
+    color: var(--dark-gray);
+    letter-spacing: 0.1rem;
+  }
+  .email
+  {
+    text-transform: lowercase;
+  }
+  /* contact */
